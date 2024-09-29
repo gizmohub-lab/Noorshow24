@@ -18,7 +18,7 @@ app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
-app.use('/uploads', express.static(path.join(__dirname, 'uploads'))); // Serve static files from uploads folder
+app.use('/public/uploads', express.static(path.join(__dirname, 'uploads'))); // Serve static files from uploads folder
 // Set EJS as the view engine
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views')); // Specify the views directory
@@ -31,7 +31,7 @@ mongoose.connect('mongodb+srv://gizmohub-lab:Gizmoashi063@noorshow.vzgcz.mongodb
 // Set up multer for file uploads
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
-        cb(null, 'uploads');
+        cb(null, '/public/uploads');
     },
     filename: (req, file, cb) => {
         cb(null, Date.now() + path.extname(file.originalname)); // Append timestamp to filename
