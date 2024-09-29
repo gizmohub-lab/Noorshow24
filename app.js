@@ -2,7 +2,7 @@ const express = require ('express')
 const app = express()
 
 const mongoose = require('mongoose');
-
+const multer = require('multer')
 const path = require('path');
 const Announcement = require('./models/Announcement')
 const bidayaModel = require('./models/bidayaModel');
