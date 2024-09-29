@@ -2,7 +2,13 @@
   "rewrites": [
     {
       "source": "/(.*)",
-      "destination": "/loding.ejs"
+      "destination": "/"
+    }
+  ],
+  "builds": [
+    {
+      "src": "app.js",
+      "use": "@vercel/node"
     }
   ]
 }
