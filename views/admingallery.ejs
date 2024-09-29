@@ -1,0 +1,47 @@
+<!-- views/admingallery.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Gallery Images</title>
+    <script>
+        function validateForm() {
+            const inputs = document.querySelectorAll('input[type="file"]');
+            for (let i = 0; i < inputs.length; i++) {
+                if (!inputs[i].files[0]) {
+                    alert('Please upload an image in all 6 fields!');
+                    return false;
+                }
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <h1>Upload 6 Images to Gallery</h1>
+    <form action="/uploads" method="POST" enctype="multipart/form-data" onsubmit="return validateForm()">
+        <input type="text" name="title" placeholder="Image Title" required><br><br>
+        
+        <label>Image 1:</label>
+        <input type="file" name="images" accept="image/*" required><br><br>
+        
+        <label>Image 2:</label>
+        <input type="file" name="images" accept="image/*" required><br><br>
+        
+        <label>Image 3:</label>
+        <input type="file" name="images" accept="image/*" required><br><br>
+        
+        <label>Image 4:</label>
+        <input type="file" name="images" accept="image/*" required><br><br>
+        
+        <label>Image 5:</label>
+        <input type="file" name="images" accept="image/*" required><br><br>
+        
+        <label>Image 6:</label>
+        <input type="file" name="images" accept="image/*" required><br><br>
+        
+        <button type="submit">Upload</button>
+    </form>
+</body>
+</html>
